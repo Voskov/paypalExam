@@ -15,12 +15,15 @@ public class Polindrome {
             }
 
         }
-        for (int i = 1; i <= 26; i++){
-            long flag = ((key%(i*2))/i);
-            if (flag > 0){
-                ans++;
+
+        if (key == 0) return 1;
+        else {
+            while (key > 0){
+                ans += (key % 2);
+                key = key / 2;
             }
         }
+
         if (ans > 1){
             return 0;
         } else {
@@ -29,7 +32,11 @@ public class Polindrome {
     }
 
     public static void main(String[] args) {
+        System.out.println(solution("a"));
+        System.out.println(solution("aa"));
+        System.out.println(solution("aaa"));
         System.out.println(solution("abcba"));
-//        System.out.println(Math.pow(2,5));
+        System.out.println(solution("kayak"));
+
     }
 }
